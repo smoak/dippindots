@@ -1,0 +1,70 @@
+#######################################
+#
+#  Zsh Prompt by Scott Moak
+#  Created: March 28 2012
+#  Last Modified: March 28 2012
+#
+#######################################
+
+# try to use colors
+autoload colors zsh/terminfo
+if [[ "$terminfo[colors]" -ge 8 ]]; then
+  colors
+fi  
+for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
+  eval PR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
+  eval PR_LIGHT_$color='%{$fg[${(L)color}]%}'
+  (( count = $count + 1 ))
+done
+PR_NO_COLOUR="%{$terminfo[sgr0]%}"
+
+# set titlebar text on a terminal emulator
+case $TERM in
+  rxvt*)
+    PR_TITLEBAR=$'%{\e]0;%(!.*ROOT* | .)%~ | %y\a%}'
+  ;;
+  screen*)
+    PR_TITLEBAR=$'%{\e_screen \005 (\005t) | %(!.*ROOT* |.)%n@%m:%~ %}'
+    # ensure SSH agent is still usable after an X restart
+    SSH_AUTH_SOCK=`find /tmp/gpg-* -name S.gpg-agent.ssh`
+  ;;
+  *)
+    PR_TITLEBAR=''
+  ;;
+esac
+
+case $TERM in
+        dumb)
+            unsetopt zle 
+            PS1='%n@%m:%~%% '
+            ;;  
+eterm-color)
+            PS1='${PR_YELLOW}%n${PR_WHITE}:%~${PR_NO_COLOUR}%% '
+;;
+        linux)
+            # zenburn for the Linux console
+            echo -en "\e]P01e2320" #zen-black (norm. black)
+            echo -en "\e]P8709080" #zen-bright-black (norm. darkgrey)
+            echo -en "\e]P1705050" #zen-red (norm. darkred)
+            echo -en "\e]P9dca3a3" #zen-bright-red (norm. red)
+            echo -en "\e]P260b48a" #zen-green (norm. darkgreen)
+            echo -en "\e]PAc3bf9f" #zen-bright-green (norm. green)
+            echo -en "\e]P3dfaf8f" #zen-yellow (norm. brown)
+            echo -en "\e]PBf0dfaf" #zen-bright-yellow (norm. yellow)
+            echo -en "\e]P4506070" #zen-blue (norm. darkblue)
+            echo -en "\e]PC94bff3" #zen-bright-blue (norm. blue)
+            echo -en "\e]P5dc8cc3" #zen-purple (norm. darkmagenta)
+            echo -en "\e]PDec93d3" #zen-bright-purple (norm. magenta)
+            echo -en "\e]P68cd0d3" #zen-cyan (norm. darkcyan)
+            echo -en "\e]PE93e0e3" #zen-bright-cyan (norm. cyan)
+            echo -en "\e]P7dcdccc" #zen-white (norm. lightgrey)
+            echo -en "\e]PFffffff" #zen-bright-white (norm. white)
+            # avoid 'artefacts'
+            #clear
+            #
+PS1="%n@%m:${PR_GREEN}[${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
+            ;;
+*)
+PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
+            ;;
+esac

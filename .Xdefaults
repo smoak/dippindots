@@ -1,0 +1,60 @@
+! Xdefaults files
+! Created by Scott Moak
+! March 28 2012
+
+
+! {{{ Xft
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+! }}}
+
+
+! {{{ URXVT
+! General
+urxvt.termName: rxvt-256color
+urxvt.scrollBar: false
+urxvt.urgentOnBell: true
+! Clickable links from: http://forums.gentoo.org/viewtopic-t-565425-start-0.html
+urxvt.perl-ext-common:  matcher
+urxvt.urlLauncher:      firefox
+urxvt.matcher.button:   1 
+
+
+!urxvt.font: -misc-tamsyn-medium-r-normal--17-123-100-100-c-80-iso8859-1
+
+! Appearance
+
+! Cursor
+urxvt.cursorColor: #DCDCCC
+
+*foreground: #D7D7D7
+*background: #2D2D2D
+!black
+*color0:     #414141
+*color8:     #575757
+!!red
+*color1:     #FF532D
+*color9:     #F9493A
+!!green
+*color2:     #17CC6C
+*color10:    #20CC17
+!!yellow
+*color3:     #FFA92D
+*color11:    #EE8034
+!!blue
+*color4:     #569BBF
+*color12:    #186EE1
+!!magenta
+*color5:     #C77BC3
+*color13:    #AC3EA7
+!!cyan
+*color6:     #61C0B0
+*color14:    #4E9886
+!!white
+*color7:     #FBFBFB
+*color15:    #EFEFEF
+
+! }}}

@@ -1,0 +1,14 @@
+#####################################
+#
+#
+#  Aliases file by Scott Moak
+#  Created: March 28 2012
+#  Last Modified: March 28 2012
+#
+#
+#
+#######################################
+
+alias ls='ls --color=auto'
+alias icanhazip='curl icanhazip.com'
+alias gcb='git checkout -b'
