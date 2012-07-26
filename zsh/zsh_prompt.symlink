@@ -65,6 +65,6 @@ eterm-color)
 PS1="%n@%m:${PR_GREEN}[${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
             ;;
 	*)
-		PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
+		PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n@${PR_YELLOW}%m${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
             ;;
 esac
