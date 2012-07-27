@@ -10,11 +10,10 @@
 ########################################
 
 # {{{ ZSH Modules
-autoload -U compinit promptinit zcalc zsh-mime-setup colors
+autoload -U compinit promptinit zcalc zsh-mime-setup
 compinit
 promptinit
 zsh-mime-setup
-colors
 # }}}
 
 # {{{ Options

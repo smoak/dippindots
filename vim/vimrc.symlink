@@ -1,7 +1,13 @@
-set nocompatible
 call pathogen#infect()
+set nocompatible
+set autoindent
+set modelines=5
 syntax on
 filetype plugin indent on
 color vividchalk
 set background=dark
 set number
+set tabstop=2
+set shiftwidth=2
+set showmatch
+

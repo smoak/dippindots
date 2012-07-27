@@ -14,7 +14,7 @@ Xft.hintstyle: hintslight
 
 ! {{{ URXVT
 ! General
-urxvt.termName: rxvt-256color
+urxvt.termName: rxvt-unicode
 urxvt.scrollBar: false
 urxvt.urgentOnBell: true
 ! Clickable links from: http://forums.gentoo.org/viewtopic-t-565425-start-0.html
