@@ -1,2 +1,4 @@
 # enable colored output from ls, etc
 export CLICOLOR=1
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
