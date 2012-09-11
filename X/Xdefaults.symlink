@@ -26,35 +26,24 @@ urxvt.matcher.button:   1
 !urxvt.font: -misc-tamsyn-medium-r-normal--17-123-100-100-c-80-iso8859-1
 
 ! Appearance
-
-! Cursor
-urxvt.cursorColor: #DCDCCC
-
-*foreground: #D7D7D7
-*background: #2D2D2D
-!black
-*color0:     #414141
-*color8:     #575757
-!!red
-*color1:     #FF532D
-*color9:     #F9493A
-!!green
-*color2:     #17CC6C
-*color10:    #20CC17
-!!yellow
-*color3:     #FFA92D
-*color11:    #EE8034
-!!blue
-*color4:     #569BBF
-*color12:    #186EE1
-!!magenta
-*color5:     #C77BC3
-*color13:    #AC3EA7
-!!cyan
-*color6:     #61C0B0
-*color14:    #4E9886
-!!white
-*color7:     #FBFBFB
-*color15:    #EFEFEF
+*foreground:   #c5c8c6
+*background:   #1d1f21
+*cursorColor:  #aeafad
+*color0:       #000000
+*color1:       #912226
+*color2:       #778900
+*color3:       #ae7b00
+*color4:       #1d2594
+*color5:       #682a9b
+*color6:       #2b6651
+*color7:       #929593
+*color8:       #666666
+*color9:       #cc6666
+*color10:      #b5bd68
+*color11:      #f0c674
+*color12:      #81a2be
+*color13:      #b294bb
+*color14:      #8abeb7
+*color15:      #ecebec
 
 ! }}}
