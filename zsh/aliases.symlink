@@ -13,3 +13,4 @@
 [[ $(uname) == "Linux" ]] && alias ls='ls --color=auto'
 alias icanhazip='curl icanhazip.com'
 alias gcb='git checkout -b'
+alias bspec='bundle exec rspec'
