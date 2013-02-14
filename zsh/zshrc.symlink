@@ -33,6 +33,11 @@ setopt VI
 
 setopt IGNORE_EOF
 
+# vcs info for prompts
+autoload -Uz vcs_info
+precmd() { vcs_info }
+setopt prompt_subst
+
 # better history                                                                                          
 HISTSIZE=1000
 SAVEHIST=1000
