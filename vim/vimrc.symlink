@@ -11,3 +11,11 @@ set shiftwidth=2
 set showmatch
 set expandtab
 color Tomorrow-Night
+
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+set hidden
+nmap \q :nohlsearch<CR>
+nmap \e :NERDTreeToggle<CR>
