@@ -2,48 +2,51 @@
 ! Created by Scott Moak
 ! March 28 2012
 
+!-------------------------------------------------------------------------------
+!
+!  U R X V T - Settings
+!
+! clickable links
+! https://wiki.archlinux.org/index.php/Rxvt#Perl_extensions
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:      /usr/bin/firefox
+URxvt.matcher.button:   1
 
-! {{{ Xft
-Xft.dpi: 96
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintslight
-! }}}
+URxvt.scrollBar: false
+URxvt.urgentOnBell: true
+urxvt*font: xft:Terminus
+urxvt*boldFont: xft:Terminus
 
+!---------------------------------------------------------------------------------
+!
+!  U R X V T - Colors
+!
+!---------------------------------------------------------------------------------
 
-! {{{ URXVT
-! General
-urxvt.termName: rxvt-unicode
-urxvt.scrollBar: false
-urxvt.urgentOnBell: true
-! Clickable links from: http://forums.gentoo.org/viewtopic-t-565425-start-0.html
-urxvt.perl-ext-common:  matcher
-urxvt.urlLauncher:      firefox
-urxvt.matcher.button:   1 
+!black
+URxvt.color0:  #000000
+URxvt.color8:  #2B2B2B
+!red
+URxvt.color1:  #A5372E
+URxvt.color9:  #E06C5C
+!green
+URxvt.color2:  #4A663C
+URxvt.color10: #7B996C
+!yellow
+URxvt.color3:  #7C5618
+URxvt.color11: #B38849
+!blue
+URxvt.color4:  #566060
+URxvt.color12: #889393
+!magenta
+URxvt.color5:  #8E4948
+URxvt.color13: #C67C78
+!cyan
+URxvt.color6:  #6D5B42
+URxvt.color14: #A28D73
+!white
+URxvt.color7:  #8D8D8D
+URxvt.color15: #C6C6C6
 
-
-!urxvt.font: -misc-tamsyn-medium-r-normal--17-123-100-100-c-80-iso8859-1
-
-! Appearance
-*foreground:   #c5c8c6
-*background:   #1d1f21
-*cursorColor:  #aeafad
-*color0:       #000000
-*color1:       #912226
-*color2:       #778900
-*color3:       #ae7b00
-*color4:       #1d2594
-*color5:       #682a9b
-*color6:       #2b6651
-*color7:       #929593
-*color8:       #666666
-*color9:       #cc6666
-*color10:      #b5bd68
-*color11:      #f0c674
-*color12:      #81a2be
-*color13:      #b294bb
-*color14:      #8abeb7
-*color15:      #ecebec
-
-! }}}
+urxvt.background: #1c1c1c
+urxvt.foreground: 15
