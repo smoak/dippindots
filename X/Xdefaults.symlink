@@ -14,8 +14,7 @@ URxvt.matcher.button:   1
 
 URxvt.scrollBar: false
 URxvt.urgentOnBell: true
-urxvt*font: xft:Terminus
-urxvt*boldFont: xft:Terminus
+URxvt*font:  xft:inconsolata:size=10:antialias=true
 
 !---------------------------------------------------------------------------------
 !
@@ -25,28 +24,28 @@ urxvt*boldFont: xft:Terminus
 
 !black
 URxvt.color0:  #000000
-URxvt.color8:  #2B2B2B
+URxvt.color8:  #666666
 !red
-URxvt.color1:  #A5372E
-URxvt.color9:  #E06C5C
+URxvt.color1:  #912226
+URxvt.color9:  #cc6666
 !green
-URxvt.color2:  #4A663C
-URxvt.color10: #7B996C
+URxvt.color2:  #778900
+URxvt.color10: #b5bd68
 !yellow
-URxvt.color3:  #7C5618
-URxvt.color11: #B38849
+URxvt.color3:  #ae7b00
+URxvt.color11: #f0c674
 !blue
-URxvt.color4:  #566060
-URxvt.color12: #889393
+URxvt.color4:  #1d2594
+URxvt.color12: #81a2be
 !magenta
-URxvt.color5:  #8E4948
-URxvt.color13: #C67C78
+URxvt.color5:  #682a9b
+URxvt.color13: #b294bb
 !cyan
-URxvt.color6:  #6D5B42
-URxvt.color14: #A28D73
+URxvt.color6:  #2b6651
+URxvt.color14: #8abeb7
 !white
-URxvt.color7:  #8D8D8D
-URxvt.color15: #C6C6C6
+URxvt.color7:  #929593
+URxvt.color15: #ecebec
 
-urxvt.background: #1c1c1c
-urxvt.foreground: 15
+urxvt.background: #1d1f21
+urxvt.foreground: #c5c8c6
