@@ -1,0 +1,2 @@
+mpd /home/smoak/.mpd/mpd.conf
+exec awesome
