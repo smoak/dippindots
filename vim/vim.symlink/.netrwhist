@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/smoak/programming/games/tile_prototype-libgdx/tile_prototype-android/build'
+let g:netrw_dirhist_2='/tmp/hubot-2.4.6/hubot/node_modules/hubot-jabbr'
+let g:netrw_dirhist_3='/tmp/hubot-2.4.6/hubot/node_modules/hubot-jabbr/src'
+let g:netrw_dirhist_4='/home/smoak/programming/ruby/mpd-dj/config'
