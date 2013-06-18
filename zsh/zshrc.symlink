@@ -29,8 +29,6 @@ setopt ZLE
 
 setopt NO_HUP
 
-setopt VI
-
 setopt IGNORE_EOF
 
 # vcs info for prompts
