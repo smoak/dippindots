@@ -1,0 +1,24 @@
+# use zsh
+set -g default-command /usr/bin/zsh
+set -g default-shell /usr/bin/zsh
+
+# support 256 colors
+set -g default-terminal "screen-256color"
+
+# large history
+set -g history-limit 10000
+
+# better status bar
+set -g status-bg '#666666'
+set -g status-fg '#aaaaaa'
+
+# display active pane in diff background
+set-option -g pane-active-border-fg green
+set-option -g pane-active-border-bg green
+
+# highlight status bar on activity
+setw -g monitor-activity on
+set -g visual-activity on
+set -g visual-bell on
+# automatically set window title
+set -g automatic-rename
