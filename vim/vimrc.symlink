@@ -17,11 +17,20 @@ set ignorecase
 set smartcase
 set hlsearch
 set hidden
+
 nmap \q :nohlsearch<CR>
 nmap \e :NERDTreeToggle<CR>
 
 " Enable omnicomplete
 set omnifunc=syntaxcomplete#Complete
+set dir=/tmp
+
+" Our stupid config (/etc/vim/vimrc.local) at whitepages sets paste on by default,
+" so we must fix it!
+" who thought this was a good idea?!
+set nopaste
+" It also sets noai...ugh...
+set ai
 
 " Java uses 4 spaces for indent
 autocmd FileType java setlocal shiftwidth=4 tabstop=4
