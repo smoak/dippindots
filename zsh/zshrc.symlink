@@ -17,6 +17,8 @@ zsh-mime-setup
 # }}}
 
 # {{{ Options
+# turn off vi mode
+bindkey -e
 
 # Now we can pipe to multiple outputs!
 setopt MULTIOS

@@ -19,3 +19,13 @@ set hlsearch
 set hidden
 nmap \q :nohlsearch<CR>
 nmap \e :NERDTreeToggle<CR>
+
+" Enable omnicomplete
+set omnifunc=syntaxcomplete#Complete
+
+" Java uses 4 spaces for indent
+autocmd FileType java setlocal shiftwidth=4 tabstop=4
+autocmd FileType groovy setlocal shiftwidth=4 tabstop=4
+
+" Perl uses tabs
+autocmd FileType perl setlocal noexpandtab
