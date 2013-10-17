@@ -2,23 +2,47 @@
 set -g default-command /usr/bin/zsh
 set -g default-shell /usr/bin/zsh
 
+setw -g utf8 on
+set -g status-utf8 on
+
+set -g status-left-length 60
+set -g status-right-length 60
+
+set -g status-left ' #[bold]❐ #S - #H#[default] ⡇'
+set -g status-right '#[bold]⡇ #(whoami) ● #(box_name) ◷ #[default]%H:%M '
+
+set -g status-interval 10
+
+
 # support 256 colors
 set -g default-terminal "screen-256color"
 
 # large history
 set -g history-limit 10000
 
-# better status bar
-set -g status-bg '#666666'
-set -g status-fg '#aaaaaa'
-
-# display active pane in diff background
-set-option -g pane-active-border-fg green
-set-option -g pane-active-border-bg green
 
 # highlight status bar on activity
-setw -g monitor-activity on
 set -g visual-activity on
-set -g visual-bell on
+set -g visual-content on
+setw -g monitor-activity on
+setw -g automatic-rename off
+
 # automatically set window title
-set -g automatic-rename
+#set -g automatic-rename
+
+# Terminal emulator window title
+set -g set-titles on
+set -g set-titles-string '[#(box_name):#I] #W'
+setw -g automatic-rename off
+setw -g window-status-format ' #I #W '
+setw -g window-status-attr bold
+# starts windows at 1 not 0
+set -g base-index 1
+
+# Reload tmux conf.
+unbind r
+bind r source-file ~/.tmux.conf\; display "Reloaded conf."
+
+source $HOME/.tmux/tomorrow-night.tmux
+
+new-session
