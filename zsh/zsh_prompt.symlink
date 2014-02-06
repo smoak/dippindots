@@ -63,6 +63,10 @@ eterm-color)
 PS1="%n@%m:${PR_GREEN}[${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
             ;;
 	*)
-    PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n@${PR_YELLOW}%m${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]${PR_YELLOW}\$vcs_info_msg_0_${PR_GREEN}$ ${PR_NO_COLOUR}"
-            ;;
+    if [[ ! -z "$SSH_CLIENT" ]]; then
+      PS1="${PR_MAGENTA}(ssh)${PR_GREEN}[${PR_LIGHT_BLUE}%n@${PR_YELLOW}%m${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]${PR_YELLOW}\$vcs_info_msg_0_${PR_GREEN}$ ${PR_NO_COLOUR}"
+    else
+      PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n@${PR_YELLOW}%m${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]${PR_YELLOW}\$vcs_info_msg_0_${PR_GREEN}$ ${PR_NO_COLOUR}"
+    fi
+  ;;
 esac
