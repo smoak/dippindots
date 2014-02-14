@@ -1,0 +1,5 @@
+reset_vm() {
+  vm=$1
+  echo "Resetting vm: $vm"
+  ssh bofh4.util.pages wp-s -o reset -f $vm 
+}
