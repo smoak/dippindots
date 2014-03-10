@@ -14,3 +14,4 @@
 alias icanhazip='curl icanhazip.com'
 alias gcb='git checkout -b'
 alias bspec='bundle exec rspec'
+alias gits='git status'

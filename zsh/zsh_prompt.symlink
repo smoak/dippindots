@@ -10,7 +10,7 @@
 autoload colors zsh/terminfo
 if [[ "$terminfo[colors]" -ge 8 ]]; then
   colors
-fi  
+fi
 for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE GREY; do
   eval PR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
   eval PR_LIGHT_$color='%{$fg[${(L)color}]%}'
@@ -34,14 +34,14 @@ case $TERM in
 esac
 
 case $TERM in
-        dumb)
-            unsetopt zle 
-            PS1='%n@%m:%~%% '
-            ;;  
-eterm-color)
-            PS1='${PR_YELLOW}%n${PR_WHITE}:%~${PR_NO_COLOUR}%% '
-;;
-        linux)
+  dumb)
+    unsetopt zle
+    PS1='%n@%m:%~%% '
+  ;;
+  eterm-color)
+    PS1='${PR_YELLOW}%n${PR_WHITE}:%~${PR_NO_COLOUR}%% '
+  ;;
+  linux)
             # zenburn for the Linux console
             echo -en "\e]P01e2320" #zen-black (norm. black)
             echo -en "\e]P8709080" #zen-bright-black (norm. darkgrey)
@@ -62,9 +62,13 @@ eterm-color)
             # avoid 'artefacts'
             #clear
             #
-PS1="%n@%m:${PR_GREEN}[${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
+            PS1="%n@%m:${PR_GREEN}[${PR_BLUE}%~${PR_GREEN}]$ ${PR_NO_COLOUR}"
             ;;
 	*)
-    PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n@${PR_YELLOW}%m${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]${PR_YELLOW}\$vcs_info_msg_0_${PR_GREEN}$ ${PR_NO_COLOUR}"
-            ;;
+    if [[ ! -z "$SSH_CLIENT" ]]; then
+      PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n@${PR_YELLOW}%m${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]${PR_YELLOW}\$vcs_info_msg_0_${PR_GREEN} (ssh)$ ${PR_NO_COLOUR}"
+    else
+      PS1="${PR_GREEN}[${PR_LIGHT_BLUE}%n@${PR_YELLOW}%m${PR_GREEN}][${PR_BLUE}%~${PR_GREEN}]${PR_YELLOW}\$vcs_info_msg_0_${PR_GREEN}$ ${PR_NO_COLOUR}"
+    fi
+  ;;
 esac

@@ -10,7 +10,9 @@ set tabstop=2
 set shiftwidth=2
 set showmatch
 set expandtab
-color Tomorrow-Night
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-default
+" color Tomorrow-Night
 
 set incsearch
 set ignorecase
@@ -23,6 +25,7 @@ nmap \e :NERDTreeToggle<CR>
 " Java uses 4 spaces for indent
 autocmd FileType java setlocal shiftwidth=4 tabstop=4
 autocmd FileType groovy setlocal shiftwidth=4 tabstop=4
+autocmd FileType xml setlocal shiftwidth=4 tabstop=4
 
 " Perl uses tabs
 autocmd FileType perl setlocal noexpandtab

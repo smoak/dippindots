@@ -48,6 +48,19 @@ setopt SHARE_HISTORY
 
 #}}}
 
+# theme
+BASE16_SCHEME="default"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
+# gnupg agent
+source /etc/profile.d/gpg-agent.sh
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  source "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+fi
+
 # Load ~/.zsh_prompt, ~/.exports, ~/.aliases, ~/.functions, ~/.extra
 for file in ~/.{zsh_prompt,exports,aliases,functions,extra,keybindings}; do
   [ -r "$file" ] && source "$file"
