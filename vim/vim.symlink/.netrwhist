@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/smoak/programming/work/wp-verification/.bundle/ruby/2.0.0/gems/wp-thrift-3.2.1'
+let g:netrw_dirhist_2='/home/smoak/programming/work/wp-verification/lib/wp-verification'
+let g:netrw_dirhist_3='/home/smoak/programming/work/whitepages_line/.bundle/ruby/2.0.0/gems/wp_account_helper-1.4.2'
+let g:netrw_dirhist_4='/home/smoak/programming/work/whitepages_line/config/environments/development/chef'
+let g:netrw_dirhist_5='/home/smoak/programming/work/wp-profile-manager-app/bundle/ruby/2.0.0/gems/wp_account_helper-1.4.2'
+let g:netrw_dirhist_6='/home/smoak/programming/work/wp-profile-manager-app/bundle/ruby/2.0.0/gems/wp-engine-login-4.4.4'
+let g:netrw_dirhist_7='/home/smoak/programming/work/wp-profile-manager-app/bundle/ruby/2.0.0/gems/wp_account_helper-1.4.2'
+let g:netrw_dirhist_8='/home/smoak/.tmux'

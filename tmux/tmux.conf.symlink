@@ -8,11 +8,19 @@ set -g status-utf8 on
 set -g status-left-length 60
 set -g status-right-length 60
 
-set -g status-left ' #[bold]❐ #S - #H#[default] ⡇'
-set -g status-right '#[bold]⡇ #(whoami) ● #(box_name) ◷ #[default]%H:%M '
-
-set -g status-interval 10
-
+# Theme: based on base16 color scheme
+set  -g status-bg colour12
+set  -g status-fg colour15
+set  -g status-left " #S "
+set  -g status-left-bg colour12
+set  -g status-left-fg colour0
+set  -g status-right " #T "
+set  -g status-right-length 50
+setw -g window-status-format " #I #W#[fg=colour8]#F "
+setw -g window-status-current-format " #I #W#[fg=colour11]#F "
+setw -g window-status-current-attr none
+setw -g window-status-current-bg colour0
+setw -g window-status-current-fg colour2
 
 # support 256 colors
 set -g default-terminal "screen-256color"
@@ -20,29 +28,11 @@ set -g default-terminal "screen-256color"
 # large history
 set -g history-limit 10000
 
-
-# highlight status bar on activity
-set -g visual-activity on
-set -g visual-content on
-setw -g monitor-activity on
-setw -g automatic-rename off
-
-# automatically set window title
-#set -g automatic-rename
-
-# Terminal emulator window title
-set -g set-titles on
-set -g set-titles-string '[#(box_name):#I] #W'
-setw -g automatic-rename off
-setw -g window-status-format ' #I #W '
-setw -g window-status-attr bold
 # starts windows at 1 not 0
 set -g base-index 1
 
 # Reload tmux conf.
 unbind r
 bind r source-file ~/.tmux.conf\; display "Reloaded conf."
-
-source $HOME/.tmux/tomorrow-night.tmux
 
 new-session

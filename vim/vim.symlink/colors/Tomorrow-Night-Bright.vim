@@ -1,0 +1,1 @@
+/home/smoak/programming/open_source/tomorrow-theme/vim/colors/Tomorrow-Night-Bright.vim
