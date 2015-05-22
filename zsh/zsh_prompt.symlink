@@ -26,7 +26,7 @@ case $TERM in
   screen*)
     PR_TITLEBAR=$'%{\e_screen \005 (\005t) | %(!.*ROOT* |.)%n@%m:%~ %}'
     # ensure SSH agent is still usable after an X restart
-    SSH_AUTH_SOCK=`find /tmp/gpg-* -name S.gpg-agent.ssh`
+    SSH_AUTH_SOCK=`find $HOME/.gnupg -name S.gpg-agent.ssh`
   ;;
   *)
     PR_TITLEBAR=''
