@@ -20,6 +20,8 @@ set hlsearch
 set hidden
 nmap \q :nohlsearch<CR>
 nmap \e :NERDTreeToggle<CR>
+let mapleader = "\<Space>"
+nnoremap <Leader>o :CtrlP<CR>
 
 " Java uses 4 spaces for indent
 autocmd FileType java setlocal shiftwidth=4 tabstop=4

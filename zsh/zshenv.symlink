@@ -7,5 +7,7 @@ fi
 
 # enable colored output from ls, etc
 export CLICOLOR=1
-export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
+export GOPATH=$HOME/programming/gospace
+export PATH="$GOPATH/bin:$HOME/bin:$HOME/.rbenv/bin:$PATH"
+[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && . "$HOME/.dnx/dnvm/dnvm.sh"
 eval "$(rbenv init -)"
