@@ -1,14 +1,3 @@
-#####################################
-#
-#
-#  Aliases file by Scott Moak
-#  Created: March 28 2012
-#  Last Modified: March 28 2012
-#
-#
-#
-#######################################
-
 # Only alias ls for Linux
 [[ $(uname) == "Linux" ]] && alias ls='ls --color=auto'
 alias icanhazip='curl icanhazip.com'
