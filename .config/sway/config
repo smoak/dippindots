@@ -1,0 +1,2 @@
+include "./base.conf"
+output * bg ~/Pictures/wallpaper/desktop fill

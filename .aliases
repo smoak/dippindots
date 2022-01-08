@@ -2,6 +2,5 @@
 [[ $(uname) == "Linux" ]] && alias ls='ls --color=auto'
 alias icanhazip='curl icanhazip.com'
 alias gcb='git checkout -b'
-alias bspec='bundle exec rspec'
 alias gits='git status'
-alias binstall='bundle install --binstubs .bin --path .bundle'
+alias gitp='git push --force-with-lease'
