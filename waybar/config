@@ -1,12 +1,14 @@
 {
-  "height": 20,
+  "layer": "bottom",
+  "position": "top",
+  "height": 14,
   "modules-left": [
     "sway/workspaces",
-    "sway/mode",
-    "custom/media"
+    "sway/mode"
   ],
   "modules-center": [
-    "sway/window"
+    "sway/window",
+    "custom/recorder"
   ],
   "modules-right": [
     "idle_inhibitor",
@@ -14,13 +16,17 @@
     "cpu",
     "memory",
     "custom/weather",
-    "custom/alsa",
     "battery",
+    "custom/wpctl",
     "clock",
     "tray"
   ],
   "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
+    "format": " {}"
+  },
+  "sway/window": {
+    "max-length": 25,
+    "tooltip": false
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -29,20 +35,34 @@
       "deactivated": ""
     }
   },
+  "network": {
+    "format": "{icon}",
+    "format-wifi": " ({signalStrength}%)",
+    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{usage}% ",
+    "on-click": "alacritty -e 'htop'"
+  },
   "tray": {
+    "icon-size": 15,
     "spacing": 10
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}",
-    "format": "{:%m-%d %I:%M %p}"
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
+    "format-alt": " {:%a,%b %d}",
+    "format": "{:%I:%M %p}"
   },
   "memory": {
-    "format": "{}% "
+    "interval": 30,
+    "format": "{}% ",
+    "warning": 70,
+    "critical": 90
   },
   "temperature": {
     "critical-threshold": 80,
@@ -53,20 +73,13 @@
       ""
     ]
   },
-  "backlight": {
-    "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      ""
-    ]
-  },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
+    "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
     "format-icons": [
@@ -77,18 +90,8 @@
       ""
     ]
   },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
-  "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
-  },
   "custom/alsa": {
-    "exec": "amixer get Master | sed -nre 's/.*\\[off\\].*/      muted/p; s/.*\\[(.*%)\\].*/    \\1/p'",
+    "exec": "amixer get Master | sed -nre 's/.*\\[off\\].*/    muted/p; s/.*\\[(.*%)\\].*/  \\1/p'",
     "on-click": "amixer set Master toggle",
     "on-scroll-up": "amixer set Master 1+",
     "on-scroll-down": "amixer set Master 1-",
@@ -103,5 +106,19 @@
     "exec": "~/.config/waybar/waybar-wttr.py",
     "exec-if": "ping wttr.in -c1",
     "return-type": "json"
+  },
+  "custom/recorder": {
+    "format": "",
+    "return-type": "json",
+    "interval": 1,
+    "exec": "echo '{\"class\": \"recording\"}'",
+    "exec-if": "pgrep wf-recorder"
+  },
+  "custom/wpctl": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 10,
+    "tooltip": false,
+    "exec": "~/.config/waybar/sound.sh"
   }
 }

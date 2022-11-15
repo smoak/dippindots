@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import urllib.request, json
+#import requests
 from datetime import datetime
 
 WEATHER_CODES = {
@@ -57,7 +58,8 @@ WEATHER_CODES = {
 data = {}
 
 
-with urllib.request.urlopen("https://wttr.in/Shoreline?format=j1") as url:
+#weather = requests.get("https://wttr.in/?format=j1").json()
+with urllib.request.urlopen("https://wttr.in/Shoreline,WA?format=j1") as url:
     weather = json.loads(url.read().decode())
 
 
