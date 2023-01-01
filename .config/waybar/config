@@ -1,7 +1,7 @@
 {
   "layer": "bottom",
   "position": "top",
-  "height": 14,
+  "height": 24,
   "modules-left": [
     "sway/workspaces",
     "sway/mode"
@@ -17,10 +17,25 @@
     "memory",
     "custom/weather",
     "battery",
-    "custom/wpctl",
+    "wireplumber",
     "clock",
     "tray"
   ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "term": "",
+      "web": "",
+      "web2": "",
+      "music": "",
+      "im": "",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
   "sway/mode": {
     "format": " {}"
   },
@@ -64,22 +79,13 @@
     "warning": 70,
     "critical": 90
   },
-  "temperature": {
-    "critical-threshold": 80,
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ]
-  },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
+    "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
     "format-icons": [
@@ -90,14 +96,10 @@
       ""
     ]
   },
-  "custom/alsa": {
-    "exec": "amixer get Master | sed -nre 's/.*\\[off\\].*/    muted/p; s/.*\\[(.*%)\\].*/  \\1/p'",
-    "on-click": "amixer set Master toggle",
-    "on-scroll-up": "amixer set Master 1+",
-    "on-scroll-down": "amixer set Master 1-",
-    "signal": 11,
-    "interval": 10,
-    "tooltip": false
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": ["", "", ""]
   },
   "custom/weather": {
     "format": "{}",
@@ -113,12 +115,5 @@
     "interval": 1,
     "exec": "echo '{\"class\": \"recording\"}'",
     "exec-if": "pgrep wf-recorder"
-  },
-  "custom/wpctl": {
-    "format": "{}",
-    "return-type": "json",
-    "interval": 10,
-    "tooltip": false,
-    "exec": "~/.config/waybar/sound.sh"
   }
 }
